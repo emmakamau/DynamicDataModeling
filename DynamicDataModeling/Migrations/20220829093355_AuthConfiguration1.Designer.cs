@@ -3,6 +3,7 @@ using System;
 using DynamicDataModeling;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DynamicDataModeling.Migrations
 {
     [DbContext(typeof(DataModelingContext))]
-    partial class DataModelingContextModelSnapshot : ModelSnapshot
+    [Migration("20220829093355_AuthConfiguration1")]
+    partial class AuthConfiguration1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -239,25 +241,6 @@ namespace DynamicDataModeling.Migrations
                             Id = 3,
                             Name = "User3"
                         });
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormalizedName")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IdentityRoles");
                 });
 
             modelBuilder.Entity("DynamicDataModeling.Models.Contact", b =>

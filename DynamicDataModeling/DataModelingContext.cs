@@ -1,4 +1,6 @@
-﻿using DynamicDataModeling.Models;
+﻿using DynamicDataModeling.Authentication;
+using DynamicDataModeling.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace DynamicDataModeling
@@ -15,6 +17,11 @@ namespace DynamicDataModeling
         public DbSet<PersonalInfo> PersonalInfos { get; set; }
         
         public DbSet<GlobalType> GlobalTypes { get; set; }
+
+        // Authentication related
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        public DbSet<IdentityRole> IdentityRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

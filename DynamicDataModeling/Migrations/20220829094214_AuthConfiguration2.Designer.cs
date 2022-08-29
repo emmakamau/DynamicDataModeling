@@ -3,6 +3,7 @@ using System;
 using DynamicDataModeling;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DynamicDataModeling.Migrations
 {
     [DbContext(typeof(DataModelingContext))]
-    partial class DataModelingContextModelSnapshot : ModelSnapshot
+    [Migration("20220829094214_AuthConfiguration2")]
+    partial class AuthConfiguration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
